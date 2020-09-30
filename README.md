@@ -1,8 +1,10 @@
 # Learning NextJS
 
-Curso Bonus de NextJS da Rocketseat
+> Curso Bonus de NextJS da Rocketseat
 
-## Iniciando o Projeto com Typescript
+## Fundamentos
+
+### Iniciando o Projeto com Typescript
 
 - Para criar um app com NextJS
 
@@ -36,7 +38,7 @@ Com SSR o next já vai ter um server node renderizando a página pronta para o b
 
 Pq a página fica disponível para webcrawlers do google e outros (bing)
 
-## PAGINAS E ROTAS
+### PAGINAS E ROTAS
 
 Rotas estaticas
 Não precisamos instalar nenhuma lib pra gerenciar rotas, o next já vem com essa feature,
@@ -55,7 +57,7 @@ Se mudar a pasta pages para dentro de src tem q reiniciar o app
 
 Dentro de pages todos os arquivos e pastas q estiverem la dentro se tornam uma rota, exceto arquivos iniciados com \_, a exemplo do \_app.tsx.
 
-## Rotas dinâmicas (parametrizadas)
+### Rotas dinâmicas (parametrizadas)
 
 Para add rotas dinamicas pasta criar um arquivo entre colchetes [] com um nome que será o id (pode ser qualquer nome)
 
@@ -69,7 +71,7 @@ http://localhost:3000/products/my-awesome-product
 
 router.query.slug == my-awesome-product
 
-## Estilização
+### Estilização
 
 Pode utilizar várias libs para esse fim, vamos usar CSS in JS, com styled-components
 
@@ -97,6 +99,50 @@ Para funcionar precisamos criar um componente \_Document.tsx e seguir os passos 
 - https://styled-components.com/docs/advanced#server-side-rendering
 
 tudo configurado pode testar habilitando e desabilitando o JavaScript do navegador. xP
+
+## Lidando com Dados
+
+### Servidor Fake
+
+para simular um CRUD completo vamos criar um server.json na raiz do projeto:
+
+```
+{
+  "categories": [
+    { "id": "camisetas", "title": "Camisetas" },
+    { "id": "calcas", "title": "Calças" }
+  ],
+  "products": [
+    { "id": 1, "title": "Camiseta Front-end", "price": 79.9, "category_id": "camisetas", "slug": "camiseta-front-ends"},
+    { "id": 2, "title": "Camiseta CSharpolin", "price": 69.9, "category_id": "camisetas", "slug": "camiseta-csharpolin"},
+    { "id": 3, "title": "Calça preta back-end", "price": 129.9, "category_id": "calcas", "slug": "calca-preta-back-end"},
+    { "id": 4, "title": "Calça azul do React", "price": 109.9, "category_id": "calcas", "slug": "calca-azul-react"}
+  ],
+  "recommended": [
+    { "id": 1, "title": "Camiseta Front-end", "price": 79.9, "category_id": "camisetas", "slug": "camiseta-front-ends"},
+    { "id": 4, "title": "Calça azul do React", "price": 109.9, "category_id": "calcas", "slug": "calca-azul-react"}
+  ]
+}
+```
+
+e rodar no terminal:
+
+```
+npx json-server server.json -p 3333 -w
+```
+
+E o server vai rodar em http://localhost:3333
+
+```
+Resources
+  http://localhost:3333/categories
+  http://localhost:3333/products
+  http://localhost:3333/recommended
+
+  Home
+  http://localhost:3333
+
+```
 
 > Above my comments and Bellow NextJS README.md
 
