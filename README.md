@@ -69,6 +69,35 @@ http://localhost:3000/products/my-awesome-product
 
 router.query.slug == my-awesome-product
 
+## Estilização
+
+Pode utilizar várias libs para esse fim, vamos usar CSS in JS, com styled-components
+
+Para instalar:
+
+```
+yarn add styled-components
+```
+
+Tipos:
+
+```
+yarn add @types/styled-components -D
+
+```
+
+criar o estilo global e uma pasta styles e comeár a criar os estilos
+
+styled-components não tem suporte nativo ao SSR, portanto se desabilitar o JS do browser vamos perceber que os estilos não são aplicados.
+
+Para funcionar precisamos criar um componente \_Document.tsx e seguir os passos da DOC do Styledcomponent para configurar o babel.
+
+- https://github.com/vercel/next.js/blob/master/examples/with-styled-components/.babelrc
+- https://github.com/vercel/next.js/blob/master/examples/with-styled-components/package.json (ver as lib q tem q instalar para funcionar o babel)
+- https://styled-components.com/docs/advanced#server-side-rendering
+
+tudo configurado pode testar habilitando e desabilitando o JavaScript do navegador. xP
+
 > Above my comments and Bellow NextJS README.md
 
 ### Next JS - stuffs
