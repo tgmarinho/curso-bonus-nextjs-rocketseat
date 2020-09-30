@@ -144,6 +144,16 @@ Resources
 
 ```
 
+### Client Side Fetch
+
+Podemos usar o axios ou SWR para fazer busca de dados pelo lado cliente, ou até mesmo o fetch API do JS.
+
+Quando usamos useEffect e alguma das libs acima e a implementação desse commit, a busca só é feita pelo navegador, e com useEffect assim que a tela é montada, e esses registros não são indexados no google por exemplo, não são lidos pelos webcrawlers.
+
+Precisamos de outra solução. Vamos ver a seguir, porém fique com exemplo de código de uma client side fetch.
+
+Quando utilizar CSF, qndo não precisar q os itens sejam indexados na busca (motores de busca).
+
 > Above my comments and Bellow NextJS README.md
 
 ### Next JS - stuffs
