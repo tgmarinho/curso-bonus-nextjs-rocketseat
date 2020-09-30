@@ -43,7 +43,7 @@ Não precisamos instalar nenhuma lib pra gerenciar rotas, o next já vem com ess
 
 não podemos excluir ou renomear a pasta pages, mas podemos deixar ela dentro de uma pasta `src`.
 
-pages/products/product.tsx
+src/pages/products/product.tsx
 
 Acessando a rota:
 
@@ -56,6 +56,18 @@ Se mudar a pasta pages para dentro de src tem q reiniciar o app
 Dentro de pages todos os arquivos e pastas q estiverem la dentro se tornam uma rota, exceto arquivos iniciados com \_, a exemplo do \_app.tsx.
 
 ## Rotas dinâmicas (parametrizadas)
+
+Para add rotas dinamicas pasta criar um arquivo entre colchetes [] com um nome que será o id (pode ser qualquer nome)
+
+```
+src/pages/products/[slug].tsx
+```
+
+E usar o useRouter do next para acessar o parametro via query.
+
+http://localhost:3000/products/my-awesome-product
+
+router.query.slug == my-awesome-product
 
 > Above my comments and Bellow NextJS README.md
 
