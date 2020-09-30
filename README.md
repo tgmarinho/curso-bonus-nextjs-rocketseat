@@ -154,6 +154,19 @@ Precisamos de outra solução. Vamos ver a seguir, porém fique com exemplo de c
 
 Quando utilizar CSF, qndo não precisar q os itens sejam indexados na busca (motores de busca).
 
+### Server Side Rendering
+
+Browser <-> Next (Node.js - SSR) <-> API
+Navegador (client, motores de busca) via HTTP invoca um recurso, o nextJS processa, busca na API, retorna a renderização para o navegador. A renderização é feita no servidor, e no browser apenas exibe o que o Next Node.js fez por baixo dos panos.
+
+- adicionando delay no servidor fake:
+
+```
+npx json-server server.json -p 3333 -w -d 2000
+```
+
+`getServerSideProps` é uma estratégia de SSR executando o código desse commit, observamos que toda a tela é carregada apos 2 segundos, isso pq o componente Home é renderizado no servidor, após 2 segundo e exibido o seu conteudo posteriormente. Essa estratégica é útil quando precisamos que items sejam indexados pelos motores de busca. Precisa seguir o nome `getServerSideProps`, isso não é inventado
+
 > Above my comments and Bellow NextJS README.md
 
 ### Next JS - stuffs
