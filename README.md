@@ -1,3 +1,66 @@
+# Learning NextJS
+
+Curso Bonus de NextJS da Rocketseat
+
+## Iniciando o Projeto com Typescript
+
+- Para criar um app com NextJS
+
+```
+yarn create next-app curso-nextjs
+```
+
+Instalar typescript
+
+```
+yarn add typescript @types/react @types/node -D
+```
+
+Renomear os arquivos usando a extensão `.tsx`
+
+Iniciar o app com
+
+```
+yarn dev
+```
+
+Vai ser detectado o typescript no projeto, e o nextjs vai gerar o arquivo `tsconfig.json`
+
+E iniciar o app em `localhost:3000` ;)
+
+NEXT já vem com fast reload refrash e mantem os estados e não causa reload da pagina top!
+
+Com SSR o next já vai ter um server node renderizando a página pronta para o browser, posso desabilitar o js e o app vai funcionar, lá no app.rocketseat.com.br não funciona…
+
+É um diferencial bem legal
+
+Pq a página fica disponível para webcrawlers do google e outros (bing)
+
+## PAGINAS E ROTAS
+
+Rotas estaticas
+Não precisamos instalar nenhuma lib pra gerenciar rotas, o next já vem com essa feature,
+
+não podemos excluir ou renomear a pasta pages, mas podemos deixar ela dentro de uma pasta `src`.
+
+pages/products/product.tsx
+
+Acessando a rota:
+
+```
+localhost:3000/pages/products/product
+```
+
+Se mudar a pasta pages para dentro de src tem q reiniciar o app
+
+Dentro de pages todos os arquivos e pastas q estiverem la dentro se tornam uma rota, exceto arquivos iniciados com \_, a exemplo do \_app.tsx.
+
+## Rotas dinâmicas (parametrizadas)
+
+> Above my comments and Bellow NextJS README.md
+
+### Next JS - stuffs
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
