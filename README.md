@@ -265,6 +265,30 @@ import dinamico veio para resolver isso.
 
 Na aba network dá para ver que apenas foi importado arquivo quando clicado no botão sommeeee
 
+### Lazy load components
+
+Carregamento preguiçoso de componentes! lol
+
+importa um componente quando ele realmente for necessário, no NextJS usamos a função dynamic para isso, importando o componente como primeiro parametro e o segundo um objeto de configuração.
+
+Podemos passar uma função para carregar um loading na tela, na prop loading.
+
+ssr: true indica que o componente será renderizado no lado servidor e false lado cliente. `false` é util quando precisamos usar algum variável que fica disponível apenas no lodo cliente, por exemplo `window` e `document` do navegador.
+
+Código:
+
+```
+import dynamic from "next/dynamic";
+
+const AddToCartModal = dynamic(
+  () => import("../../components/AddToCartModal"),
+  {
+    loading: () => <p>Loading... wait please</p>,
+    ssr: false,
+  }
+);
+```
+
 ---
 
 ### Next JS - stuffs
