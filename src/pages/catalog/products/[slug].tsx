@@ -1,29 +1,63 @@
+import { GetStaticPaths, GetStaticProps } from "next";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { Title } from "@/styles/pages/Home";
+import { client } from "@/lib/prismic";
+import Link from "next/link";
 
-import dynamic from "next/dynamic";
+import Prismic from "prismic-javascript";
+import { Document } from "prismic-javascript/types/documents";
+import PrismicDOM from "prismic-dom";
 
-const AddToCartModal = dynamic(() => import("@/components/AddToCartModal"), {
-  loading: () => <p>Loading... wait please</p>,
-  ssr: false,
-});
+interface ProductProps {
+  product: Document;
+}
 
-export default function Product() {
-  const [isAddToCartModalVisible, setIsAddToCartModalVisible] = useState(false);
-
+export default function Product({ product }: ProductProps) {
   const router = useRouter();
 
-  function handleAddToCart() {
-    setIsAddToCartModalVisible(true);
+  if (router.isFallback) {
+    return <h1>carregando....</h1>;
   }
 
   return (
     <div>
-      <h3>{router.query.slug}</h3>
+      <h1>{PrismicDOM.RichText.asText(product.data.title)}</h1>
 
-      <button onClick={handleAddToCart}>Add To Cart</button>
+      <div
+        dangerouslySetInnerHTML={{
+          __html: PrismicDOM.RichText.asHtml(product.data.description),
+        }}
+      ></div>
 
-      {isAddToCartModalVisible && <AddToCartModal />}
+      <img
+        src={product.data.thumnail.url}
+        width="300"
+        alt={product.data.title}
+      />
+
+      <p>Price: ${product.data.price}</p>
     </div>
   );
 }
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  // gera as páginas dinamicamente se não existir
+  // com fallback ele irá criar online.
+  return {
+    paths: [],
+    fallback: true,
+  };
+};
+
+export const getStaticProps: GetStaticProps<ProductProps> = async (context) => {
+  const { slug } = context.params;
+
+  const product = await client().getByUID("product", String(slug), {});
+  console.log(product.data);
+  return {
+    props: {
+      product,
+    },
+    revalidate: 10, // 10 segundos
+  };
+};

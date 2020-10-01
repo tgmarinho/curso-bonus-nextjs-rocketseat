@@ -384,7 +384,11 @@ Dando uma limpa no projeto para se adequar ao DevCommerce.
 
 ### Página de Categorias
 
-- implementando as buscas de produtos por categoria
+- implementando a busca de produtos por categoria
+
+### Página de Produto
+
+- implementando a busca de produtos
 
 ---
 
