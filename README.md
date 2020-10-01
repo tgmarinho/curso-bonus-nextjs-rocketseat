@@ -373,6 +373,15 @@ Segundo a opnião do Diego
 
 E cadastre os produtos nas categorias, seguindo o exemplo do server fake...
 
+### Utilizando o SDK do Prismic
+
+Dando uma limpa no projeto para se adequar ao DevCommerce.
+
+- adicionar as libs do prismic ver a DOC (package.json)
+- pegar url do endpoint no site do projeto prismic -- conectar a aplicação next com prismic
+- programar a busca dos dados (ver commits)
+- prestar atenção nas interfaces TS do prismic
+
 ---
 
 ### Next JS - stuffs
