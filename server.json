@@ -1,7 +1,8 @@
 {
   "categories": [
     { "id": "camisetas", "title": "Camisetas" },
-    { "id": "calcas", "title": "Calças" }
+    { "id": "calcas", "title": "Calças" },
+    { "id": "cuecas", "title": "Cuecas" }
   ],
   "products": [
     {
@@ -31,6 +32,13 @@
       "price": 109.9,
       "category_id": "calcas",
       "slug": "calca-azul-react"
+    },
+    {
+      "id": 5,
+      "title": "Cueca React Red",
+      "price": 10.9,
+      "category_id": "cuecas",
+      "slug": "cueca-react-red"
     }
   ],
   "recommended": [

@@ -209,6 +209,39 @@ Calça preta back-end
 Calça azul do React
 ```
 
+### Incremental Static Generation
+
+Permite criar páginas estáticas conforme solicitado pelo usuário em tempo de execução.
+no método `getStaticPaths` quando `fallback: true`, se o usuário acessar algum recurso q não existe, ele é criado:
+
+```
+http://localhost:3000/categories/meias
+
+```
+
+Ele vai criar a página meias
+
+```
+http://localhost:3000/categories/cuecas
+
+```
+
+Ele vai criar a página cuecas, e se tiver alguma cueca em products ela será listada no frontend.
+
+O `router` tem um propriedade `isFallback` que verifica se está sendo criada a página, se estiver criando (primeiro acesso) vai demorar um pouco. Ai precisa deixar algum loading para o usuário.
+
+```
+if (router.isFallback) {
+    return <h1>carregando....</h1>;
+  }
+```
+
+Mas depois que o recurso é criado, ele se torna estático e fica acessível de forma rápida e estática.
+
+Esse recurso é bem interssante pq permite criar páginas sem precisar parar o APP, o processo é feito quando o app está online, ou seja, não precisa de executar o `yarn build`.
+
+OBS: Que feature massa demais!!!!
+
 ---
 
 ### Next JS - stuffs
