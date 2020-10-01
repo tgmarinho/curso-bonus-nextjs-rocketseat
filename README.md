@@ -382,6 +382,10 @@ Dando uma limpa no projeto para se adequar ao DevCommerce.
 - programar a busca dos dados (ver commits)
 - prestar atenção nas interfaces TS do prismic
 
+### Página de Categorias
+
+- implementando as buscas de produtos por categoria
+
 ---
 
 ### Next JS - stuffs
