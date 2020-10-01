@@ -309,6 +309,8 @@ com isso podemos fazer um `process.env.NEXT_PUBLIC_API_URL` dentro do html e ter
 
 Detalhe que nem é necessário utilizar o pacote `.dotenv` o NextJS já consegue fazer o carregamento dinamico e cada alteração na variável nem precisa reniciar o app.
 
+quando roda o comando `yarn dev` a variável de ambiente que sobe é `.env.development` automagicamente o next faz isso pra gente xD
+
 ### Paths no TypeScript
 
 root imports com next.js fica bem mais simples.
@@ -340,6 +342,16 @@ Código fica mais limpo e o VsCode consegue entender super bem.
 Caso ñ consiga reconhecer, faça um reload na IDE.
 
 Melhora bastante a organização do projeto.
+
+### Criando componentes de SEO
+
+Criamos um componente `SEO.tsx` para poder incluir tags (meta e title) no head do html.
+
+NextJS ajuda muito com o recurso: `next/head` que inclui o conteudo no head da página, independente de onde colocamos o <SEO /> na página.
+
+Veja `SEO.tsx` e a utilizando `<SEO title="Potato" />`
+
+###
 
 ---
 
