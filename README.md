@@ -191,6 +191,26 @@ yarn start
 
 depois navegar na página top10.
 
+### Páginas estáticas dinâmicas
+
+Página estáticas dinamicas são páginas que embora seja estáticas precisam de algum dado dinamico para serem geradas.
+
+`getStaticProps` esse método nesse commit precisa do slug e o slug é dinamico, então é necessário ter os slugs estáticos tbm. E ai usamos `getStaticPaths` que irão carregas as dependencias do `getStaticProps`. Quando é feito o `yarn build` podemos ver os slugs criados.
+
+Quando chamo no navegador o slug ele já traz o resultado estático, pois tudo já foi executado no build, e foi feito uma mistura de páginas estáticas com dados dinâmicos, ou podemos dizer que uma página estática foi gerada dinamicamente:
+
+```
+http://localhost:3000/categories/calcas
+```
+
+```
+calcas
+Calça preta back-end
+Calça azul do React
+```
+
+---
+
 ### Next JS - stuffs
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
