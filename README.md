@@ -248,6 +248,23 @@ OBS: Que feature massa demais!!!!
 
 Para customizar a página 404, pasta criar um componente com nome `404.tsx` dentro da pasta `pages` e pronto! Só estilizar e já vai estar funcionando.
 
+### Utilizando import dinamico
+
+Serve para importar o código quando ele for realmente utilizado.
+Algumas vezes o código é carregado na página porém nem é utilizado, e demora para carregar a página atoa.
+
+import dinamico veio para resolver isso.
+
+```
+ const handleSum = async () => {
+    const math = (await import("../lib/math")).default;
+
+    console.log(math.sum(5, 9));
+  };
+```
+
+Na aba network dá para ver que apenas foi importado arquivo quando clicado no botão sommeeee
+
 ---
 
 ### Next JS - stuffs
