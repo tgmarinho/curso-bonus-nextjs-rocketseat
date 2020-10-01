@@ -53,7 +53,6 @@ export const getStaticProps: GetStaticProps<ProductProps> = async (context) => {
   const { slug } = context.params;
 
   const product = await client().getByUID("product", String(slug), {});
-  console.log(product.data);
   return {
     props: {
       product,

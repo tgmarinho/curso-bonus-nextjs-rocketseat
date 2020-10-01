@@ -390,6 +390,26 @@ Dando uma limpa no projeto para se adequar ao DevCommerce.
 
 - implementando a busca de produtos
 
+### Página de busca
+
+- implementando a busca de produtos na página de buscas.
+
+### Enviando para produção
+
+- primeiro rodar `yarn build` para ver se não quebrou nada, antes de enviar para prod.
+- pode fazer via vercel <-> gibhub [https://vercel.com/home#get-started](https://vercel.com/home#get-started)
+- pode fazer via vercel-cli
+
+```
+npm i -g vercel
+vercel login
+vercel
+```
+
+Pronto!
+
+> FIM xD
+
 ---
 
 ### Next JS - stuffs

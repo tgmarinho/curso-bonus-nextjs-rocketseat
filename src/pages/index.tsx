@@ -1,17 +1,21 @@
 import { GetServerSideProps } from "next";
 import Link from "next/link";
+
 import { Title } from "@/styles/pages/Home";
 import SEO from "@/components/SEO";
 import { client } from "@/lib/prismic";
 import Prismic from "prismic-javascript";
 import PrismicDOM from "prismic-dom";
 import { Document } from "prismic-javascript/types/documents";
+import { useRouter } from "next/router";
 
 interface HomeProps {
   recommendedProducts: Document[];
 }
 
 export default function Home({ recommendedProducts }: HomeProps) {
+  const router = useRouter();
+
   return (
     <div>
       <SEO
@@ -21,6 +25,7 @@ export default function Home({ recommendedProducts }: HomeProps) {
       />
       <section>
         <Title>Products</Title>
+        <span onClick={() => router.push("search")}>Buscar</span>
         <ul>
           {recommendedProducts.map((product) => (
             <li key={product.id}>
