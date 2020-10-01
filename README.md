@@ -169,6 +169,28 @@ npx json-server server.json -p 3333 -w -d 2000
 
 > Above my comments and Bellow NextJS README.md
 
+### Static Side Generation
+
+`getStaticProps` é uma estratégia de fetch de dados de maneira estática, quando é feito a build do projeto os dados são carregados, e armazenados no servidor, ficando disponível e rapidamente podemos acessar esses dados. Vantagem que os dados ficam disponíveis instaneamente, desvantagem que se os dados ficam desatualizados é necessário outra build para atualizar os dados. Porém com nextjs tem o revalidate que recebe um valor numérico que se referente de quanto em quanto tempo os dados serão recarregados.
+
+Essa estratégia foi amplamente utilizada no Gatsby, e os melhores casos de uso são Blogs, feed de notícias, onde basicamente não mudam, não são dinamicos, e se são alterados são poucas vezes...
+
+Para testar esse cenário de SSG, execute o build do projeto e depois inicie o projeto pela build, em modo de desenvolvimento não é possível reproduzir.
+
+No proprio processo de build é possível verificar quais páginas SSG foram geradas. (SSG bolinha pintada)
+
+`revalidate` só dá para testar em produção
+
+```
+yarn build
+```
+
+```
+yarn start
+```
+
+depois navegar na página top10.
+
 ### Next JS - stuffs
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
