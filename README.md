@@ -351,7 +351,11 @@ NextJS ajuda muito com o recurso: `next/head` que inclui o conteudo no head da p
 
 Veja `SEO.tsx` e a utilizando `<SEO title="Potato" />`
 
-###
+### Criando Documento Customizado
+
+Para customizar o html da página, podemos alterar o `_document.tsx` e no método render incluir as tags (componentes) <Html>, <Head>, body, <Main> e <NextScript>.
+
+Adicionamos a fonte Roboto no projeto. Ver commits.
 
 ---
 
