@@ -3,13 +3,10 @@ import { useState } from "react";
 
 import dynamic from "next/dynamic";
 
-const AddToCartModal = dynamic(
-  () => import("../../components/AddToCartModal"),
-  {
-    loading: () => <p>Loading... wait please</p>,
-    ssr: false,
-  }
-);
+const AddToCartModal = dynamic(() => import("@/components/AddToCartModal"), {
+  loading: () => <p>Loading... wait please</p>,
+  ssr: false,
+});
 
 export default function Product() {
   const [isAddToCartModalVisible, setIsAddToCartModalVisible] = useState(false);

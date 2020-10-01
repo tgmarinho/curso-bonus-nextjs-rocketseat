@@ -309,6 +309,38 @@ com isso podemos fazer um `process.env.NEXT_PUBLIC_API_URL` dentro do html e ter
 
 Detalhe que nem é necessário utilizar o pacote `.dotenv` o NextJS já consegue fazer o carregamento dinamico e cada alteração na variável nem precisa reniciar o app.
 
+### Paths no TypeScript
+
+root imports com next.js fica bem mais simples.
+
+tsconfig.json:
+
+```
+"baseUrl": "./src",
+    "paths": {
+      "@/*": ["./*"]
+    }
+```
+
+sem:
+
+```
+import("../../components/AddToCartModal"),
+```
+
+com:
+
+```
+import("@/components/AddToCartModal")
+
+```
+
+Código fica mais limpo e o VsCode consegue entender super bem.
+
+Caso ñ consiga reconhecer, faça um reload na IDE.
+
+Melhora bastante a organização do projeto.
+
 ---
 
 ### Next JS - stuffs
