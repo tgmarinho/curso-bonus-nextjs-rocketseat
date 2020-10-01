@@ -242,6 +242,12 @@ Esse recurso é bem interssante pq permite criar páginas sem precisar parar o A
 
 OBS: Que feature massa demais!!!!
 
+## Preparando para Produção
+
+### Página 404 customizada
+
+Para customizar a página 404, pasta criar um componente com nome `404.tsx` dentro da pasta `pages` e pronto! Só estilizar e já vai estar funcionando.
+
 ---
 
 ### Next JS - stuffs
