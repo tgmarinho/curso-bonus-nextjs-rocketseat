@@ -357,6 +357,16 @@ Para customizar o html da página, podemos alterar o `_document.tsx` e no métod
 
 Adicionamos a fonte Roboto no projeto. Ver commits.
 
+## Usando CSM em produção
+
+### Opções
+
+Segundo a opnião do Diego
+
+- Prismic: landing page, sites;
+- Strapi: sites pequenos sem muitos relacionamentos
+- Ghost: Blog (editor de texto muito bom) -- Verdade esse bilete!
+
 ---
 
 ### Next JS - stuffs
