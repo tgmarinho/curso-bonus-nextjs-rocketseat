@@ -289,6 +289,26 @@ const AddToCartModal = dynamic(
 );
 ```
 
+### Variáveis de ambiente
+
+Podemos criar arquivo `.env.local` na raiz do projeto, esse arquivo é apenas local e fica no .gitignore, já `.env.development` ou `.env.production` são compartilhadas.
+
+As variáveis ficam disponíveis apenas no lado servidor, se for usar de maneira tradicional.
+
+```
+API_URL=http://localhost:3333
+```
+
+Com NextJS podemos ter acesso as variáveis no lado cliente, apenas passando o prefixo: `NEXT_PUBLIC_`
+
+```
+NEXT_PUBLIC_API_URL=http://localhost:3333
+```
+
+com isso podemos fazer um `process.env.NEXT_PUBLIC_API_URL` dentro do html e ter acesso ao conteúdo da variável.
+
+Detalhe que nem é necessário utilizar o pacote `.dotenv` o NextJS já consegue fazer o carregamento dinamico e cada alteração na variável nem precisa reniciar o app.
+
 ---
 
 ### Next JS - stuffs
